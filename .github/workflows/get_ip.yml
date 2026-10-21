@@ -13,5 +13,7 @@ jobs:
             - name: Public IP
               id: ip
               uses: haythem/public-ip@v1.3
-            - name: Muestra Ip
-              run: echo La ip es {{ip}}
+            - name: Muestra IpV4
+              run: echo La ip es ${{ steps.ip.outputs.ipv4 }}
+            - name: Muestra IpV6
+              run: echo La ip es ${{ steps.ip.outputs.ipv6 }}
