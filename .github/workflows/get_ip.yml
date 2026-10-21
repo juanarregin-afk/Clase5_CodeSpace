@@ -1,0 +1,17 @@
+name: Get-public-ip
+
+on: 
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+    get-ip-job:    
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Public IP
+              id: ip
+              uses: haythem/public-ip@v1.3
+            - name: Muestra Ip
+              run: echo La ip es {{ip}}
